@@ -1,0 +1,241 @@
+<ActorFrame OnCommand="%function(self)
+        self:zoom(0.7)
+end"> <children>
+
+
+	<AutoActor
+	Type="Quad"
+	OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-43;zoomtowidth,SCREEN_WIDTH*2;zoomtoheight,SCREEN_HEIGHT*2;diffuse,0,0,0,1;diffusealpha,0;linear,1;diffusealpha,0.7"
+	OffCommand="linear,0.3;diffusealpha,0"
+	/>
+
+
+	<AutoActor
+        File="ScreenSLGJUVMCredits underlay/moddedtheme"
+        OnCommand="draworder,1010;horizalign,right;zoom,0.5;x,SCREEN_RIGHT*1.4-30;y,SCREEN_TOP+50;shadowlength,1;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+	/>
+	<AutoActor
+                Type="BitmapText"
+                Text="thing"
+                Font="_wendy white"
+				InitCommand="horizalign,right;y,SCREEN_TOP+70;x,SCREEN_RIGHT*1.4-60;zoom,0.2"
+                OnCommand="%function(self)
+                self:settext('Version '..SLGJUVMInfo['Version']..' - '..SLGJUVMInfo['VersionName'])
+                self:diffusealpha(0)
+                self:linear(1)
+                self:diffusealpha(1)
+                end"
+				OffCommand="accelerate,0.4;diffusealpha,0"
+	/>
+
+
+
+
+	<AutoActor
+        Type="BitmapText"
+        Text="- Graphics Issue"
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,left;zoom,0.7;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-165;shadowlength,1;diffuse,#ff8400;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+	/>
+
+	<AutoActor
+        Type="BitmapText"
+        Text="Weird and small bug that happend when entering the graphics menu and the game would instantly crash."
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,left;zoom,0.5;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-140;shadowlength,1;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+	/>
+
+	<AutoActor
+        Type="BitmapText"
+        Text=""
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,left;zoom,0.7;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-140;shadowlength,1;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+	/>
+
+        <AutoActor
+        Type="BitmapText"
+        Text="- More Options"
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,left;zoom,0.7;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-180+(60*1);shadowlength,1;diffuse,#9cd21d;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+        />
+
+        <AutoActor
+        Type="BitmapText"
+        Text="Quick Start and a Discord button has been added to the game."
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,left;zoom,0.5;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-155+(60*1);shadowlength,1;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+        />
+
+        <AutoActor
+        Type="BitmapText"
+        Text="Also the funny Nothing. Button."
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,left;zoom,0.5;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-140+(60*1);shadowlength,1;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+        />
+
+        <AutoActor
+        Type="BitmapText"
+        Text="- Updated Textures"
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,left;zoom,0.7;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-180+(60*2);shadowlength,1;diffuse,#ff8400;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+        />
+
+        <AutoActor
+        Type="BitmapText"
+        Text="I updated a few textures to make the theme overall look nicer."
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,left;zoom,0.5;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-155+(60*2);shadowlength,1;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+        />
+
+         <AutoActor
+        Type="BitmapText"
+        Text="- Typo?"
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,left;zoom,0.7;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-135+(60*2);shadowlength,1;diffuse,#ff8400;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+        />
+
+        <AutoActor
+        Type="BitmapText"
+        Text="Nope! Beter is here to stay."
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,left;zoom,0.5;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-110+(60*2);shadowlength,1;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+        />
+
+        <AutoActor
+        Type="BitmapText"
+        Text="This is going to be barely continued, as im only going to fix some game breaking bugs and maybe a few things cosmeticly."
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,left;zoom,0.5;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-100+(60*3);shadowlength,1;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+        />
+
+        <AutoActor
+        Type="BitmapText"
+        Text="- SMUFED"
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,left;zoom,0.5;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-60+(60*3);shadowlength,1;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+        />
+		
+		 <AutoActor
+        Type="BitmapText"
+        Text="- Added scripts from Simply Love Oat and Rya's edit"
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,left;zoom,0.7;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-210+(60*4);shadowlength,1;diffuse,#9cd21d;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+        />
+
+
+
+<!--
+
+	<AutoActor
+        Type="BitmapText"
+        Text="- Distraction Free Mode"
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,left;zoom,0.7;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-120;shadowlength,1;diffuse,#9cd21d;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+	/>
+
+	<AutoActor
+        Type="BitmapText"
+        Text="If you're playing a marathon long song, this mode will activate."
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,left;zoom,0.5;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-95;shadowlength,1;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+	/>
+
+	<AutoActor
+        Type="BitmapText"
+        Text="What it does is that it reverses the Judgment, Combo, BPM and Hold tweens to the original SL tweens, so it doesn't get distracting in the hard segments."
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,left;zoom,0.5;x,SCREEN_LEFT+20;y,SCREEN_CENTER_Y-85;shadowlength,1;wrapwidthpixels,SCREEN_WIDTH*2;vertalign,top;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+	/>
+
+-->
+
+
+
+
+	
+        <AutoActor
+        Type="BitmapText"
+        Text="New Feature::::Change/Fix"
+        Font="Common Normal"
+        OnCommand="%function(self)
+        self:x(SCREEN_WIDTH*1.4)
+        self:horizalign('right')
+        self:y(SCREEN_CENTER_Y+100)
+        self:zoom(0.5)
+        end"
+        OffCommand="linear,0.3;diffusealpha,0"
+        />
+
+        <AutoActor
+        Type="Quad"
+        OnCommand="%function(self)
+        self:x(SCREEN_WIDTH*1.28)
+        self:horizalign('right')
+        self:y(SCREEN_CENTER_Y+90)
+        self:zoom(10)
+        self:diffuse(0,1,0,0)
+        self:linear(1)
+        self:diffusealpha(1)
+        self:diffuse(0,1,0,1)
+        end"
+        OffCommand="linear,0.3;diffusealpha,0"
+        />
+
+        <AutoActor
+        Type="Quad"
+        OnCommand="%function(self)
+        self:x(SCREEN_WIDTH*1.28)
+        self:horizalign('right')
+        self:y(SCREEN_CENTER_Y+125)
+        self:zoom(10)
+        self:diffuse(1,0.5,0,0)
+        self:linear(1)
+        self:diffusealpha(1)
+        self:diffuse(1,0.5,0,1)
+        end"
+        OffCommand="linear,0.3;diffusealpha,0"
+        />
+
+
+        <AutoActor
+        Type="BitmapText"
+        Text=""
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,right;zoom,0.5;x,SCREEN_RIGHT*1.40;y,SCREEN_CENTER_Y+205+40+40+40+40;shadowlength,1;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+        />
+
+
+
+	<!-- DECORATION -->
+	
+	<AutoActor
+	Type="Quad"
+	OnCommand="x,SCREEN_CENTER_X;y,SCREEN_BOTTOM*1.4-23;zoomtowidth,SCREEN_WIDTH*2;zoomtoheight,30;diffuse,0,0,0,1;diffusealpha,0;linear,1;diffusealpha,1"
+	OffCommand="linear,0.3;diffusealpha,0"
+	/>
+	<AutoActor
+        Type="BitmapText"
+        Text="Press Back to exit."
+        Font="Common Normal"
+        OnCommand="draworder,1010;horizalign,center;zoom,0.5;x,SCREEN_CENTER_X*1.45;y,SCREEN_BOTTOM*1.4-30;shadowlength,1;diffusealpha,0;linear,1;diffusealpha,1"
+        OffCommand="linear,0.3;diffusealpha,0"
+	/>
+</children> </ActorFrame>

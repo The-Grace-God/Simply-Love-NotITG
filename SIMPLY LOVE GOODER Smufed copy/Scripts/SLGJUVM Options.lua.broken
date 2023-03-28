@@ -1,0 +1,461 @@
+function JUVMProfile() return PROFILEMAN:GetMachineProfile():GetSaved() end
+
+function FailDisplay()
+	local t = OptionRowBase('FailDisplay')
+	t.OneChoiceForAllPlayers = true
+	t.Choices = { "Enable", "Disable" }
+	t.LoadSelections = function(self, list) if JUVMProfile().JUVMDisplayFailText then list[1] = true else list[2] = true end end
+	t.SaveSelections = function(self, list)
+		if list[1] then JUVMProfile().JUVMDisplayFailText = true;  PROFILEMAN:SaveMachineProfile() end
+		if list[2] then JUVMProfile().JUVMDisplayFailText = false; PROFILEMAN:SaveMachineProfile() end
+	end
+	return t
+end
+
+function TipDisplay()
+	local t = OptionRowBase('TipDisplay')
+	t.OneChoiceForAllPlayers = true
+	t.Choices = { "Show", "Hide" }
+	t.LoadSelections = function(self, list) if JUVMProfile().JUVMDisplayTips then list[1] = true else list[2] = true end end
+	t.SaveSelections = function(self, list)
+		if list[1] then JUVMProfile().JUVMDisplayTips = true;  PROFILEMAN:SaveMachineProfile() end
+		if list[2] then JUVMProfile().JUVMDisplayTips = false; PROFILEMAN:SaveMachineProfile() end
+	end
+	return t
+end
+
+function ShowClock()
+	local t = OptionRowBase('ShowClock')
+	t.OneChoiceForAllPlayers = true
+	t.Choices = { "Show", "Hide" }
+	t.LoadSelections = function(self, list) if JUVMProfile().JUVMDisplayClock then list[1] = true else list[2] = true end end
+	t.SaveSelections = function(self, list)
+		if list[1] then JUVMProfile().JUVMDisplayClock = true;  PROFILEMAN:SaveMachineProfile() end
+		if list[2] then JUVMProfile().JUVMDisplayClock = false; PROFILEMAN:SaveMachineProfile() end
+	end
+	return t
+end
+
+function HalfwayDisplay()
+	local t = OptionRowBase('HalfwayDisplay')
+	t.OneChoiceForAllPlayers = true
+	t.Choices = { "Enable", "Disable" }
+	t.LoadSelections = function(self, list) if JUVMProfile().JUVMDisplayHalfway then list[1] = true else list[2] = true end end
+	t.SaveSelections = function(self, list)
+		if list[1] then JUVMProfile().JUVMDisplayHalfway = true;  PROFILEMAN:SaveMachineProfile() end
+		if list[2] then JUVMProfile().JUVMDisplayHalfway = false; PROFILEMAN:SaveMachineProfile() end
+	end
+	return t
+end
+
+function SongTimerDisplay()
+	local t = OptionRowBase('SongTimerDisplay')
+	t.OneChoiceForAllPlayers = true
+	t.Choices = { "Enable", "Disable" }
+	t.LoadSelections = function(self, list) if JUVMProfile().JUVMDisplaySongTimer then list[1] = true else list[2] = true end end
+	t.SaveSelections = function(self, list)
+		if list[1] then JUVMProfile().JUVMDisplaySongTimer = true;  PROFILEMAN:SaveMachineProfile() end
+		if list[2] then JUVMProfile().JUVMDisplaySongTimer = false; PROFILEMAN:SaveMachineProfile() end
+	end
+	return t
+end
+
+function ShowSongBackgroundSM()
+	local t = OptionRowBase('ShowSongBackgroundSM')
+	t.OneChoiceForAllPlayers = true
+	t.Choices = { "Enable", "Disable" }
+	t.LoadSelections = function(self, list) if JUVMProfile().JUVMShowSongBackgroundSM then list[1] = true else list[2] = true end end
+	t.SaveSelections = function(self, list)
+		if list[1] then JUVMProfile().JUVMShowSongBackgroundSM = true;  PROFILEMAN:SaveMachineProfile() end
+		if list[2] then JUVMProfile().JUVMShowSongBackgroundSM = false; PROFILEMAN:SaveMachineProfile() end
+	end
+	return t
+end
+
+function AnimatedEditorBackground()
+	local t = OptionRowBase('AnimatedEditorBackground')
+	t.OneChoiceForAllPlayers = true
+	t.Choices = { "Enable", "Disable" }
+	t.LoadSelections = function(self, list) if JUVMProfile().JUVMAnimatedEditorBG then list[1] = true else list[2] = true end end
+	t.SaveSelections = function(self, list)
+		if list[1] then JUVMProfile().JUVMAnimatedEditorBG = true;  PROFILEMAN:SaveMachineProfile() end
+		if list[2] then JUVMProfile().JUVMAnimatedEditorBG = false; PROFILEMAN:SaveMachineProfile() end
+	end
+	return t
+end
+
+function SLGJUVMDailyBackground()
+	local t = OptionRowBase('SLGJUVMDailyBackground')
+	t.OneChoiceForAllPlayers = true
+	t.Choices = { "Daily", "Lucy", "Shame", "Banshee", "Hexagons", "GOODTEK", "Maze", "Neko" }
+	t.LoadSelections = function(self, list) if JUVMProfile().JUVMDailyBG == true then list[1] = true elseif JUVMProfile().JUVMDailyBG == 'Lucy' then list[2] = true elseif JUVMProfile().JUVMDailyBG == 'Shame' then list[3] = true elseif JUVMProfile().JUVMDailyBG == 'Banshee' then list[4] = true elseif JUVMProfile().JUVMDailyBG == 'Hexagons' then list[5] = true elseif JUVMProfile().JUVMDailyBG == 'GOODTEK' then list[6] = true elseif JUVMProfile().JUVMDailyBG == 'Maze' then list[7] = true elseif JUVMProfile().JUVMDailyBG == 'Zero' then list[8] = true else list[1] = true end end
+	t.SaveSelections = function(self, list)
+		if list[1] then JUVMProfile().JUVMDailyBG = true;  end
+		if list[2] then JUVMProfile().JUVMDailyBG = 'Lucy'; end
+		if list[3] then JUVMProfile().JUVMDailyBG = 'Shame'; end
+		if list[4] then JUVMProfile().JUVMDailyBG = 'Banshee'; end
+		if list[5] then JUVMProfile().JUVMDailyBG = 'Hexagons'; end
+		if list[6] then JUVMProfile().JUVMDailyBG = 'GOODTEK'; end
+		if list[7] then JUVMProfile().JUVMDailyBG = 'Maze'; end
+		if list[8] then JUVMProfile().JUVMDailyBG = 'Neko'; end
+	end
+	return t
+end
+
+function _FE_PROF(castDice)
+	return castDice and {
+		BackgroundShader=BackgroundShader_CastDice(saved.BackgroundShader),
+		-- add here other options using random
+	} or saved
+end
+
+local CUR_VER=10101
+
+-- keep savedata compatibility
+if not saved then -- means no savedata but also no adress value!
+	PROFILEMAN:GetMachineProfile():GetSaved().Fork_n_Edit={ Version=CUR_VER }
+	saved=PROFILEMAN:GetMachineProfile():GetSaved().Fork_n_Edit -- stock adress again
+else
+	local version=saved.Version or 0
+	--[[
+	if version<12000 then
+		FixFoobarSavedata()
+	end
+	]]--
+	if version>CUR_VER then
+		SCREENMAN:SystemMessage(string.format(
+			"WARNING: This theme version is older than save data version!\ntheme ver%d.%d.%d - save ver%d.%d.%d",
+			CUR_VER/10000, CUR_VER/100%100, CUR_VER%100, version/10000, version/100%100, version%100
+		))
+	else saved.Version = CUR_VER end
+end
+
+-- NO MORE COPYPASTE
+-- WE NEED TO BUILD OPTION TEMPLATE
+
+-- set defaults (note: if there seems like "rough", check the .editorconfig file)
+saved.DisplayCustomHeaders	= saved.DisplayCustomHeaders	or 1
+saved.DisplayFriendZ		= saved.DisplayFriendZ			or 1
+saved.HideCredit			= saved.HideCredit				or 2
+saved.ResultGif				= saved.ResultGif				or 2
+saved.ResultText			= saved.ResultText				or 2
+saved.ResultBar				= saved.ResultBar				or 125
+saved.ResultPB				= saved.ResultPB				or 3
+saved.FakeFailed			= saved.FakeFailed				~= not true -- [nil->true]
+saved.DefaultInputType		= saved.DefaultInputType		or 1
+saved.Apply2Both			= saved.Apply2Both				~= not true
+saved.BackgroundShader		= saved.BackgroundShader		or 1
+saved.RichPresence			= saved.RichPresence			~= not true
+saved.ResultsAlpha			= saved.ResultsAlpha			or 2 -- floating point
+saved.ShowHeaders			= saved.ShowHeaders				~= not true
+saved.ShowPlaytime			= saved.ShowPlaytime			~= not true
+saved.ShowTotalPlaytime		= saved.ShowTotalPlaytime		~= not true
+saved.AggressiveRichPresence= saved.AggressiveRichPresence	== not false -- [nil->false]
+saved.BackgroundBrightness	= saved.BackgroundBrightness	or 5 -- floating point
+
+saved.InputTypeOffset2		= saved.InputTypeOffset2		or ''
+saved.InputTypeOffset3		= saved.InputTypeOffset3		or ''
+saved.TotalPlayedSongs		= saved.TotalPlayedSongs		or 0
+saved.TotalPlayedFor		= saved.TotalPlayedFor			or 0
+
+-- keep total played count
+local prof = PROFILEMAN:GetMachineProfile():GetSaved()
+if prof.OATTotalPlayedFor and prof.OATTotalPlayedSongs then
+	local maxFor=math.max(prof.OATTotalPlayedFor,saved.TotalPlayedFor)
+	local maxSongs=math.max(prof.OATTotalPlayedSongs,saved.TotalPlayedSongs)
+	saved.TotalPlayedFor=maxFor
+	saved.TotalPlayedSongs=maxSongs
+	prof.OATTotalPlayedFor=maxFor
+	prof.OATTotalPlayedSongs=maxSongs
+else
+	prof.OATTotalPlayedFor=saved.TotalPlayedFor
+	prof.OATTotalPlayedSongs=saved.TotalPlayedSongs
+end
+
+
+local function resetBackground()
+	SCREENMAN:GetTopScreen()(1)(2):diffusealpha(1)
+end
+
+function OptionTesting(...)
+	SCREENMAN:SystemMessage(table.concat({args}))
+end
+
+function OptionDisplayCustomHeaders()
+	local t = OptionRowBase('FunnyHeaders',{'Always','Occasionally','Disable'})
+	t.OneChoiceForAllPlayers = true
+	t.LoadSelections = function(self, list) list[saved.DisplayCustomHeaders] = true end
+	t.SaveSelections = function(self, list)
+		for i,c in ipairs(list) do if c then saved.DisplayCustomHeaders = i end end
+		if ScreenSLGJUVMOptionsHeader then
+			if		list[1] then ScreenSLGJUVMOptionsHeader:settext('This header will display random junk at all times')
+			elseif	list[2] then ScreenSLGJUVMOptionsHeader:settext('This header will only display random junk in certain screens')
+			elseif	list[3] then ScreenSLGJUVMOptionsHeader:settext('This header will stay the same')
+			end
+		end
+		resetBackground()
+	end
+	return t
+end
+
+function OptionDisplaySongSelectFriends()
+	local t = OptionRowBase('SongSelectFriends',{'Mix Random','PixelJumpers','PixelJumpers+','Just SHAME','Karens','Off'})
+	t.OneChoiceForAllPlayers = true
+	t.LoadSelections = function(self, list) list[saved.DisplayFriendZ] = true end
+	t.SaveSelections = function(self, list)
+		for i,c in ipairs(list) do if c then saved.DisplayFriendZ = i end end
+		 
+		resetBackground()
+	end
+	return t
+end
+
+function OptionHideCredit()
+	local t = OptionRowBase('HideCredit',{'On','HideAuto','CardAuto','Off'})
+	t.OneChoiceForAllPlayers = true
+	t.LoadSelections = function(self, list) list[saved.HideCredit] = true end
+	t.SaveSelections = function(self, list)
+		for i,c in ipairs(list) do if c then saved.HideCredit = i end end
+		 
+		resetBackground()
+	end
+	return t
+end
+
+function OptionDisplayResultGIF()
+	local t = OptionRowBase('ResultGradeGIF',{'On','FunnyFail','Off','FunnyFail-ONLY'})
+	t.OneChoiceForAllPlayers = true
+	t.LoadSelections = function(self, list) list[saved.ResultGif] = true end
+	t.SaveSelections = function(self, list)
+		for i,c in ipairs(list) do if c then saved.ResultGif = i end end
+		 
+		resetBackground()
+	end
+	return t
+end
+
+function OptionDisplayResultFunnyText()
+	local t = OptionRowBase('ResultFunnyJudge',{'Text Only','Text with Animation','Off'})
+	t.OneChoiceForAllPlayers = true
+	t.LoadSelections = function(self, list) list[saved.ResultText] = true end
+	t.SaveSelections = function(self, list)
+		for i,c in ipairs(list) do if c then saved.ResultText = i end end
+		 
+		resetBackground()
+	end
+	return t
+end
+
+function OptionDisplayResultRatioBar()
+	local t = OptionRowBase('ResultRatioBar',{'Full Bar','Half Bar','Off'})
+	t.OneChoiceForAllPlayers = true
+	t.LoadSelections = function(self, list)
+		for i,w in ipairs({125,62,0}) do if saved.ResultBar==w then list[i] = true end end
+	end
+	t.SaveSelections = function(self, list)
+		for i,w in ipairs({125,62,0}) do if list[i] then saved.ResultBar = w end end
+		 
+		resetBackground()
+	end
+	return t
+end
+
+function OptionDisplayResultBestScore()
+	local t = OptionRowBase('ResultBestScore',{'Score Only','Diff. Only','Score and Diff.','Off'})
+	t.OneChoiceForAllPlayers = true
+	t.LoadSelections = function(self, list) list[saved.ResultPB] = true end
+	t.SaveSelections = function(self, list)
+		for i,c in ipairs(list) do if c then saved.ResultPB = i end end
+		 
+		resetBackground()
+	end
+	return t
+end
+
+function OptionFakeFailed()
+	local t = OptionRowBase('FakeFailed',{'On','Off'})
+	t.OneChoiceForAllPlayers = true
+	t.LoadSelections = function(self, list) list[saved.FakeFailed and 1 or 2] = true end
+	t.SaveSelections = function(self, list)
+		saved.FakeFailed = list[1]
+		 
+		resetBackground()
+	end
+	return t
+end
+
+function OptionDefaultInputType()
+	local t = OptionRowBase('DefaultInputType',{'Off',stitch('configEx').InputDevice2,stitch('configEx').InputDevice3,'Auto(Card)','Auto(Connect)'})
+	t.OneChoiceForAllPlayers = true
+	t.LoadSelections = function(self, list) list[saved.DefaultInputType] = true end
+	t.SaveSelections = function(self, list)
+		for i,c in ipairs(list) do if c then saved.DefaultInputType = i end end
+		 
+		resetBackground()
+	end
+	return t
+end
+
+function OptionApply2Both()
+	local t = OptionRowBase('Apply2Both',{'On','Off'})
+	t.OneChoiceForAllPlayers = true
+	t.LoadSelections = function(self, list) list[saved.Apply2Both and 1 or 2] = true end
+	t.SaveSelections = function(self, list)
+		saved.Apply2Both = list[1]
+		 
+		resetBackground()
+	end
+	return t
+end
+
+local shaders= { -- {choiceName,intensiveFlag}
+	{'earthbound.frag'},
+	{'plasma.frag'},
+	{'topologica.frag',true},
+	{'theyaremanycolors.frag'},
+	{'descent.frag',true},
+	{'rez_dubstepmyass.frag',true},
+	{'rez_mynameisjulia.frag',true},
+	{'rez_roadtohell.frag',true},
+	{'rez_structures.frag',true},
+	{'rez_thedescent.frag',true},
+	{'solid color'},
+	{'star factory'},
+	{'glacia',true},
+}
+function OptionBackgroundShader()
+	local t = OptionRowBase('BackgroundShader',{})
+	t.OneChoiceForAllPlayers = true
+	for _,v in ipairs(shaders) do table.insert(t.Choices,v[1]) end
+	table.insert(t.Choices,"Random") -- -1
+	table.insert(t.Choices,"Daily Random") -- -2
+	t.LoadSelections = function(self, list)
+		list[saved.BackgroundShader<0 and #shaders-saved.BackgroundShader or saved.BackgroundShader] = true
+	end
+	t.SaveSelections = function(self, list)
+		for i,c in ipairs(list) do if c then
+			saved.BackgroundShader = i>#shaders and #shaders-i or i
+			MESSAGEMAN:Broadcast('UpdateBackgroundShader')
+			SCREENMAN:GetTopScreen()(1)(2):diffusealpha(0.3)
+			if i>#shaders then ScreenSLGJUVMOptionsHeader:settext('THEME OPTIONS | This contains very intensive shaders!')
+			elseif shaders[i][2] then ScreenSLGJUVMOptionsHeader:settext('THEME OPTIONS | This is a very intensive shader!')
+			else   end
+		end end
+	end
+	return t
+end
+function BackgroundShader_CastDice(BackgroundShader)
+	if BackgroundShader == -1 then
+		-- Random
+		math.randomseed(math.random()*1000000+Second()*Hour()*DayOfYear())
+		return math.random(1,#shaders)
+	elseif BackgroundShader == -2 then
+		-- Daily Random
+		math.randomseed(DayOfYear()+Year()*366)
+		math.random() math.random() math.random() -- WDYM lua math.random has stacks???
+		return math.random(1,#shaders)
+	else
+		return BackgroundShader
+	end
+end
+
+function OptionRichPresence()
+	local t = OptionRowBase('RichPresence',{'On','Off'})
+	t.OneChoiceForAllPlayers = true
+	t.LoadSelections = function(self, list) list[saved.RichPresence and 1 or 2] = true end
+	t.SaveSelections = function(self, list)
+		saved.RichPresence = list[1]
+		 
+		resetBackground()
+	end
+	return t
+end
+
+function OptionResultsAlpha()
+	local t = OptionRowBase('ResultsAlpha',{})
+	t.OneChoiceForAllPlayers = true
+	for i = 0,1,0.1 do table.insert(t.Choices, i) end
+	t.LoadSelections = function(self, list) list[saved.ResultsAlpha+1] = true return end
+	t.SaveSelections = function(self, list)
+		for i,c in ipairs(list) do if c then saved.ResultsAlpha = i-1 end end
+		 
+		resetBackground()
+		ResultsAlphaPreview:hidden(0)
+		for i,v in ipairs(ResultsAlphaPreview:GetChildren()) do v:queuecommand('Update') end
+		SCREENMAN:GetTopScreen()(1)(2):diffusealpha(0)
+	end
+	t.LayoutType = 'ShowOneInRow'
+	return t
+end
+
+local function resetHeader()
+	ScreenThemeOptionsHeader:settext('THEME OPTIONS')
+	ScreenThemeOptionsHeaderTop:hidden(saved.ShowHeaders and 0 or 1)
+	ScreenThemeOptionsHeader:hidden(saved.ShowHeaders and 0 or 1)
+	SCREENMAN(10):hidden(saved.ShowHeaders and 0 or 1)
+	ResultsAlphaPreview:hidden(1)
+end
+
+function OptionBackgroundBrightness()
+	local t = OptionRowBase('BackgroundBrightness',{})
+	t.OneChoiceForAllPlayers = true
+	for i = 0,1,0.1 do table.insert(t.Choices, i) end
+	t.LoadSelections = function(self, list) list[saved.BackgroundBrightness+1] = true return end
+	t.SaveSelections = function(self, list)
+		for i,c in ipairs(list) do if c then saved.BackgroundBrightness = i-1 end end
+		 
+		resetBackground()
+		MESSAGEMAN:Broadcast('UpdateBackgroundShader')
+		SCREENMAN:GetTopScreen()(1)(2):diffusealpha(0.3)
+	end
+	t.LayoutType = 'ShowOneInRow'
+	return t
+end
+
+function OptionShowHeaders()
+	local t = OptionRowBase('ShowHeaders',{'On','Off'})
+	t.OneChoiceForAllPlayers = true
+	t.LoadSelections = function(self, list) list[saved.ShowHeaders and 1 or 2] = true end
+	t.SaveSelections = function(self, list)
+		saved.ShowHeaders = list[1]
+		 
+		resetBackground()
+	end
+	return t
+end
+
+function OptionShowPlaytime()
+	local t = OptionRowBase('ShowPlaytime',{'On','Off'})
+	t.OneChoiceForAllPlayers = true
+	t.LoadSelections = function(self, list) list[saved.ShowPlaytime and 1 or 2] = true end
+	t.SaveSelections = function(self, list)
+		saved.ShowPlaytime = list[1]
+		 
+		resetBackground()
+	end
+	return t
+end
+
+function OptionShowTotalPlaytime()
+	local t = OptionRowBase('ShowTotalPlaytime',{'On','Off'})
+	t.OneChoiceForAllPlayers = true
+	t.LoadSelections = function(self, list) list[saved.ShowTotalPlaytime and 1 or 2] = true end
+	t.SaveSelections = function(self, list)
+		saved.ShowTotalPlaytime = list[1]
+		 
+		resetBackground()
+	end
+	return t
+end
+
+function OptionAggressiveRichPresence()
+	local t = OptionRowBase('AggressiveRichPresence',{'On','Off'})
+	t.OneChoiceForAllPlayers = true
+	t.LoadSelections = function(self, list) list[saved.AggressiveRichPresence and 1 or 2] = true end
+	t.SaveSelections = function(self, list)
+		saved.AggressiveRichPresence = list[1]
+		 
+		resetBackground()
+	end
+	return t
+end

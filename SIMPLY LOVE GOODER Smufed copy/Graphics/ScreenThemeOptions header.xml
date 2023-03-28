@@ -1,0 +1,128 @@
+<ActorFrame> <children>
+	<Layer File="ScreenWithMenuElements header" Var="ScreenThemeOptionsHeaderTop"/>	
+	<Layer
+		Type="BitmapText"
+		Text="THEME OPTIONS"
+		File="_wendy white"
+		OnCommand="diffuse,#FFFFFF;zoom,.4;shadowlength,1;horizalign,left;x,15;y,16"
+		OffCommand="linear,0.2;diffusealpha,0"
+		Var="ScreenThemeOptionsHeader"
+	/>
+
+	<Layer Type="ActorFrame" Var="ResultsAlphaPreview" InitCommand="hidden,1"><children>
+		<Layer Type="Quad"
+			OnCommand="diffuse,#1E282F;stretchto,SCREEN_CENTER_X-310,409,SCREEN_CENTER_X-5,443;diffusealpha,0.2"
+			UpdateCommand="%function(self) self:diffusealpha(_FE_PROF().ResultsAlpha / 10) end"
+		/>
+		<Layer Type="Quad"
+			OnCommand="diffuse,#1E282F59;stretchto,SCREEN_CENTER_X-310,320,SCREEN_CENTER_X-5,409;diffusealpha,0.2"
+			UpdateCommand="%function(self) self:diffusealpha(_FE_PROF().ResultsAlpha / 10 * 0.35) end"
+		/>
+
+		<Layer Type="Quad"
+			OnCommand="diffuse,#1E282F;stretchto,SCREEN_CENTER_X-310,180,SCREEN_CENTER_X-5,355;diffusealpha,0.2"
+			UpdateCommand="%function(self) self:diffusealpha(_FE_PROF().ResultsAlpha / 10) end"
+		/>
+		<Layer Type="Quad"
+			OnCommand="diffuse,#00000077;stretchto,SCREEN_CENTER_X-310,180,SCREEN_CENTER_X-146,240;diffusealpha,0.2"
+			UpdateCommand="%function(self) self:diffusealpha(_FE_PROF().ResultsAlpha / 10 * 0.47) end"
+		/>
+
+		<Layer Type="Quad"
+			OnCommand="diffuse,#1E282F;stretchto,SCREEN_CENTER_X+5,409,SCREEN_CENTER_X+310,443;diffusealpha,0.2"
+			UpdateCommand="%function(self) self:diffusealpha(_FE_PROF().ResultsAlpha / 10) end"
+		/>
+		<Layer Type="Quad"
+			OnCommand="diffuse,#1E282F59;stretchto,SCREEN_CENTER_X+5,320,SCREEN_CENTER_X+310,409;diffusealpha,0.2"
+			UpdateCommand="%function(self) self:diffusealpha(_FE_PROF().ResultsAlpha / 10 * 0.35) end"
+		/>
+
+		<Layer Type="Quad"
+			OnCommand="diffuse,#1E282F;stretchto,SCREEN_CENTER_X+5,180,SCREEN_CENTER_X+310,355;diffusealpha,0.2"
+			UpdateCommand="%function(self) self:diffusealpha(_FE_PROF().ResultsAlpha / 10) end"
+		/>
+		<Layer Type="Quad"
+			OnCommand="diffuse,#00000077;stretchto,SCREEN_CENTER_X+146,180,SCREEN_CENTER_X+310,240;diffusealpha,0.2"
+			UpdateCommand="%function(self) self:diffusealpha(_FE_PROF().ResultsAlpha / 10 * 0.47) end"
+		/>
+
+
+		<Layer Type="ActorFrame" OnCommand="x,SCREEN_CENTER_X+75;y,SCREEN_CENTER_Y-42"> <children>
+			<Layer Type="BitmapText" Font="_misobold white" Text="@_FE_PROF().ResultText~=3 and stitch('configEx').TextFantastic or 'FANTASTIC'"
+			InitCommand="y,27*0;zoom,0.35;diffuse,#27D0FEFF;horizalign,right;ShadowLength,1" />
+			<Layer Type="BitmapText" Font="_misobold white" Text="@_FE_PROF().ResultText~=3 and stitch('configEx').TextExcellent or 'EXCELLENT'"
+			InitCommand="y,27*1;zoom,0.35;diffuse,#F6E213FF;horizalign,right;ShadowLength,1" />
+			<Layer Type="BitmapText" Font="_misobold white" Text="@_FE_PROF().ResultText~=3 and stitch('configEx').TextGreat or 'GREAT'"
+			InitCommand="y,27*2;zoom,0.35;diffuse,#46E308FF;horizalign,right;ShadowLength,1" />
+			<Layer Type="BitmapText" Font="_misobold white" Text="@_FE_PROF().ResultText~=3 and stitch('configEx').TextDecent or 'DECENT'"
+			InitCommand="y,27*3;zoom,0.35;diffuse,#A264F3FF;horizalign,right;ShadowLength,1"
+			OnCommand="%function(self) if not Decents() then self:diffuse(.5,.5,.5,.5) end end" />
+			<Layer Type="BitmapText" Font="_misobold white" Text="@_FE_PROF().ResultText~=3 and stitch('configEx').TextWayOff or 'WAY OFF'"
+			InitCommand="y,27*4;zoom,0.35;diffuse,#FA7A04FF;horizalign,right;ShadowLength,1"
+			OnCommand="%function(self) if not WayOffs() then self:diffuse(.5,.5,.5,.5) end end" />
+			<Layer Type="BitmapText" Font="_misobold white" Text="@_FE_PROF().ResultText~=3 and stitch('configEx').TextMiss or 'MISS'"
+			InitCommand="y,27*5;zoom,0.35;diffuse,#F60808FF;horizalign,right;ShadowLength,1" />
+		</children> </Layer>
+		<Layer Type="ActorFrame" Condition="_FE_PROF().ResultBar~=0" OnCommand="x,SCREEN_CENTER_X+13;y,SCREEN_CENTER_Y-24"> <children>
+			<Layer Type="Quad" OnCommand="y,27*0;horizalign,left;zoomx,_FE_PROF().ResultBar;zoomy,3;diffuse,1,1,1,.25;" />
+			<Layer Type="Quad" OnCommand="y,27*0;horizalign,left;zoomx,_FE_PROF().ResultBar*60/125;zoomy,3;diffuse,#27D0FEFF" />
+			<Layer Type="Quad" OnCommand="y,27*1;horizalign,left;zoomx,_FE_PROF().ResultBar;zoomy,3;diffuse,1,1,1,.25;" />
+			<Layer Type="Quad" OnCommand="y,27*1;horizalign,left;zoomx,_FE_PROF().ResultBar*30/125;zoomy,3;diffuse,#F6E213FF" />
+			<Layer Type="Quad" OnCommand="y,27*2;horizalign,left;zoomx,_FE_PROF().ResultBar;zoomy,3;diffuse,1,1,1,.25;" />
+			<Layer Type="Quad" OnCommand="y,27*2;horizalign,left;zoomx,_FE_PROF().ResultBar*15/125;zoomy,3;diffuse,#46E308FF"/>
+			<Layer Type="Quad" OnCommand="y,27*3;horizalign,left;zoomx,_FE_PROF().ResultBar;zoomy,3;diffuse,1,1,1,.25;" />
+			<Layer Type="Quad" InitCommand="%function(self) if not Decents() then self:hidden(1) end end"
+			                   OnCommand="y,27*3;horizalign,left;zoomx,_FE_PROF().ResultBar*10/125;zoomy,3;diffuse,#A264F3FF" />
+			<Layer Type="Quad" OnCommand="y,27*4;horizalign,left;zoomx,_FE_PROF().ResultBar;zoomy,3;diffuse,1,1,1,.25;" />
+			<Layer Type="Quad" InitCommand="%function(self) if not WayOffs() then self:hidden(1) end end"
+			                   OnCommand="y,27*4;horizalign,left;zoomx,_FE_PROF().ResultBar*7/125;zoomy,3;diffuse,#FA7A04FF" />
+			<Layer Type="Quad" OnCommand="y,27*5;horizalign,left;zoomx,_FE_PROF().ResultBar;zoomy,3;diffuse,1,1,1,.25;" />
+			<Layer Type="Quad" OnCommand="y,27*5;horizalign,left;zoomx,_FE_PROF().ResultBar*3/125;zoomy,3;diffuse,#F60808FF" />
+		</children> </Layer>
+		<Layer Type="ActorFrame" OnCommand="x,SCREEN_CENTER_X+205;y,SCREEN_CENTER_Y-42"> <children>
+			<Layer Type="BitmapText" Font="_misobold white" Text="@_FE_PROF().ResultText~=3 and stitch('configEx').TextHolds or 'Holds'" OnCommand="y,27*2;zoom,0.35;diffuse,#06F8BFFF;horizalign,right;ShadowLength,1" />
+			<Layer Type="BitmapText" Font="_misobold white" Text="@_FE_PROF().ResultText~=3 and stitch('configEx').TextMines or 'Mines'" OnCommand="y,27*3;zoom,0.35;diffuse,#9FA09AFF;horizalign,right;ShadowLength,1" />
+			<Layer Type="BitmapText" Font="_misobold white" Text="@_FE_PROF().ResultText~=3 and stitch('configEx').TextHands or 'Hands'" OnCommand="y,27*4;zoom,0.35;diffuse,#FFFFFFFF;horizalign,right;ShadowLength,1" />
+			<Layer Type="BitmapText" Font="_misobold white" Text="@_FE_PROF().ResultText~=3 and stitch('configEx').TextRolls or 'Rolls'" OnCommand="y,27*5;zoom,0.35;diffuse,#079C39FF;horizalign,right;ShadowLength,1" />
+		</children> </Layer>
+
+		<Layer Type="ActorFrame" OnCommand="x,SCREEN_CENTER_X-75;y,SCREEN_CENTER_Y-42"> <children>
+			<Layer Type="BitmapText" Font="_misobold white" Text="@_FE_PROF().ResultText~=3 and stitch('configEx').TextFantastic or 'FANTASTIC'"
+			InitCommand="y,27*0;zoom,0.35;diffuse,#27D0FEFF;horizalign,right;ShadowLength,1" />
+			<Layer Type="BitmapText" Font="_misobold white" Text="@_FE_PROF().ResultText~=3 and stitch('configEx').TextExcellent or 'EXCELLENT'"
+			InitCommand="y,27*1;zoom,0.35;diffuse,#F6E213FF;horizalign,right;ShadowLength,1" />
+			<Layer Type="BitmapText" Font="_misobold white" Text="@_FE_PROF().ResultText~=3 and stitch('configEx').TextGreat or 'GREAT'"
+			InitCommand="y,27*2;zoom,0.35;diffuse,#46E308FF;horizalign,right;ShadowLength,1" />
+			<Layer Type="BitmapText" Font="_misobold white" Text="@_FE_PROF().ResultText~=3 and stitch('configEx').TextDecent or 'DECENT'"
+			InitCommand="y,27*3;zoom,0.35;diffuse,#A264F3FF;horizalign,right;ShadowLength,1"
+			OnCommand="%function(self) if not Decents() then self:diffuse(.5,.5,.5,.5) end end" />
+			<Layer Type="BitmapText" Font="_misobold white" Text="@_FE_PROF().ResultText~=3 and stitch('configEx').TextWayOff or 'WAY OFF'"
+			InitCommand="y,27*4;zoom,0.35;diffuse,#FA7A04FF;horizalign,right;ShadowLength,1"
+			OnCommand="%function(self) if not WayOffs() then self:diffuse(.5,.5,.5,.5) end end" />
+			<Layer Type="BitmapText" Font="_misobold white" Text="@_FE_PROF().ResultText~=3 and stitch('configEx').TextMiss or 'MISS'"
+			InitCommand="y,27*5;zoom,0.35;diffuse,#F60808FF;horizalign,right;ShadowLength,1" />
+		</children> </Layer>
+		<Layer Type="ActorFrame" Condition="_FE_PROF().ResultBar~=0" OnCommand="x,SCREEN_CENTER_X-136;y,SCREEN_CENTER_Y-24"> <children>
+			<Layer Type="Quad" OnCommand="y,27*0;horizalign,left;zoomx,_FE_PROF().ResultBar;zoomy,3;diffuse,1,1,1,.25;" />
+			<Layer Type="Quad" OnCommand="y,27*0;horizalign,left;zoomx,_FE_PROF().ResultBar*60/125;zoomy,3;diffuse,#27D0FEFF" />
+			<Layer Type="Quad" OnCommand="y,27*1;horizalign,left;zoomx,_FE_PROF().ResultBar;zoomy,3;diffuse,1,1,1,.25;" />
+			<Layer Type="Quad" OnCommand="y,27*1;horizalign,left;zoomx,_FE_PROF().ResultBar*30/125;zoomy,3;diffuse,#F6E213FF" />
+			<Layer Type="Quad" OnCommand="y,27*2;horizalign,left;zoomx,_FE_PROF().ResultBar;zoomy,3;diffuse,1,1,1,.25;" />
+			<Layer Type="Quad" OnCommand="y,27*2;horizalign,left;zoomx,_FE_PROF().ResultBar*15/125;zoomy,3;diffuse,#46E308FF"/>
+			<Layer Type="Quad" OnCommand="y,27*3;horizalign,left;zoomx,_FE_PROF().ResultBar;zoomy,3;diffuse,1,1,1,.25;" />
+			<Layer Type="Quad" Condition="Decents()"
+			                   OnCommand="y,27*3;horizalign,left;zoomx,_FE_PROF().ResultBar*10/125;zoomy,3;diffuse,#A264F3FF" />
+			<Layer Type="Quad" OnCommand="y,27*4;horizalign,left;zoomx,_FE_PROF().ResultBar;zoomy,3;diffuse,1,1,1,.25;" />
+			<Layer Type="Quad" Condition="WayOffs()"
+			                   OnCommand="y,27*4;horizalign,left;zoomx,_FE_PROF().ResultBar*7/125;zoomy,3;diffuse,#FA7A04FF" />
+			<Layer Type="Quad" OnCommand="y,27*5;horizalign,left;zoomx,_FE_PROF().ResultBar;zoomy,3;diffuse,1,1,1,.25;" />
+			<Layer Type="Quad" OnCommand="y,27*5;horizalign,left;zoomx,_FE_PROF().ResultBar*3/125;zoomy,3;diffuse,#F60808FF" />
+		</children> </Layer>
+		<Layer Type="ActorFrame" OnCommand="x,SCREEN_CENTER_X-250;y,SCREEN_CENTER_Y-42"> <children>
+			<Layer Type="BitmapText" Font="_misobold white" Text="@_FE_PROF().ResultText~=3 and stitch('configEx').TextHolds or 'Holds'" OnCommand="y,27*2;zoom,0.35;diffuse,#06F8BFFF;horizalign,right;ShadowLength,1" />
+			<Layer Type="BitmapText" Font="_misobold white" Text="@_FE_PROF().ResultText~=3 and stitch('configEx').TextMines or 'Mines'" OnCommand="y,27*3;zoom,0.35;diffuse,#9FA09AFF;horizalign,right;ShadowLength,1" />
+			<Layer Type="BitmapText" Font="_misobold white" Text="@_FE_PROF().ResultText~=3 and stitch('configEx').TextHands or 'Hands'" OnCommand="y,27*4;zoom,0.35;diffuse,#FFFFFFFF;horizalign,right;ShadowLength,1" />
+			<Layer Type="BitmapText" Font="_misobold white" Text="@_FE_PROF().ResultText~=3 and stitch('configEx').TextRolls or 'Rolls'" OnCommand="y,27*5;zoom,0.35;diffuse,#079C39FF;horizalign,right;ShadowLength,1" />
+		</children> </Layer>
+	</children></Layer>
+</children> </ActorFrame>

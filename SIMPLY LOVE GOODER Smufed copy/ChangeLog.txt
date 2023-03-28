@@ -1,0 +1,23 @@
+ChangeLog (Version 8 - "Bugs Glaore")
+
+- Graphics Issue
+	Weird and small bug that happend when entering the graphics menu and the game would instantly crash
+
+- More Options
+	This feature is a recreation of dbk2's jfonts workaround.
+	Now the theme can display many japanese and korean characters without any issues.
+
+- Fixed issues with Wineskin
+	Quick Start and a Discord button has been added to the game
+	Also the funny Nothing. Button
+
+- Updated Textures
+	I updated a few textures to make the theme overall look nicer
+
+- Typo?
+	Nope! Beter is here to stay
+	
+
+This is going to be barely continued, as im only going to fix some game breaking bugs and maybe a few things cosmeticly.
+
+- SMUFED

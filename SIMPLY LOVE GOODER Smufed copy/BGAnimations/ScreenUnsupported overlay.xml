@@ -1,0 +1,7 @@
+<ActorFrame><children>
+	<BitmapText
+		Font="_misoreg small"
+		Text="Sorry, but this theme supports for NotITG v4.3.0 or later ONLY.::Press start, and then select other else."
+		OnCommand="xy,SCREEN_CENTER_X,SCREEN_CENTER_Y;zoom,0.8;diffusealpha,0;decelerate,1;diffusealpha,1"
+	/>
+</children></ActorFrame>
