@@ -3,7 +3,7 @@ A theme made specifically for NotITG
 
 # What is this theme aiming to achieve
 - this theme was made and still is made for the intention of easy personalization and usability so anyone can use it without much knowledge with Stepmania or NotITG 
-- also this is a theme also made for the intention to be used in any situation no matter if your on a cab, a home computer, friends PC, or even a Steam Deck ao anyone is able to use this theme
+- also this is a theme also made for the intention to be used in any situation no matter if your on a cab, a home computer, friends PC, or even a Steam Deck so anyone is able to use this theme
 
 # Disclaimer:
 - Even though i count this as my theme not all of this is mine in fact most of the credit goes to jose_varela as he's the person who made the theme this is based off ofim only reviving the project as the original creator stoped working on it 5 years ago.
