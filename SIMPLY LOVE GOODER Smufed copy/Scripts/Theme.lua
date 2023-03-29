@@ -258,7 +258,7 @@ function SongBGLoad(self)
 end
 
 SLGJUVMInfo = {
-	Version = "8";
-	VersionDate = "March 11th 2023";
-	VersionName = "BUGS GALORE";
+	Version = "8.1";
+	VersionDate = "March 29th 2023";
+	VersionName = "FREEDOM WITH FIXES";
 };

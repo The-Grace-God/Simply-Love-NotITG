@@ -1,6 +1,6 @@
 <ActorFrame><children>
 	<ActorFrame InitCommand="%EvaluationInit" FirstUpdateCommand="%Evaluation" />
-	<ActorFrame Command="queuecommand,Icon" IconCommand="%function() StyleIcon() end" />
+	<ActorFrame Command="queuecommand,Icon" IconCommand="%function() StyleIcon(); if not JUVMProfile().OATShowHeaders then SCREENMAN:GetTopScreen():GetChild('StyleIcon'):hidden(1) end end" />
 	<ActorFrame
 		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
 		Command="x,DoublesOffset()"
@@ -13,17 +13,21 @@
 		/>
 
 		<Layer Type="Quad"
-			OnCommand="diffuse,#1E282F;stretchto,SCREEN_CENTER_X-310,409,SCREEN_CENTER_X-5,443"
+			InitCommand="diffuse,#1E282F;stretchto,SCREEN_CENTER_X-310,409,SCREEN_CENTER_X-5,443;diffusealpha,0.2"
+			OnCommand="%function(self) self:diffusealpha((JUVMProfile().OATResultsAlpha or 2) / 10) end"
 		/>	
 		<Layer Type="Quad"
-			OnCommand="diffuse,#1E282F59;stretchto,SCREEN_CENTER_X-310,320,SCREEN_CENTER_X-5,409"
+			InitCommand="diffuse,#1E282F59;stretchto,SCREEN_CENTER_X-310,320,SCREEN_CENTER_X-5,409;diffusealpha,0.2"
+			OnCommand="%function(self) self:diffusealpha((JUVMProfile().OATResultsAlpha or 2) / 10 * 0.35) end"
 		/>	
 	
 		<Layer Type="Quad"
-			OnCommand="diffuse,#1E282F;stretchto,SCREEN_CENTER_X-310,180,SCREEN_CENTER_X-5,355"
+			InitCommand="diffuse,#1E282F;stretchto,SCREEN_CENTER_X-310,180,SCREEN_CENTER_X-5,355;diffusealpha,0.2"
+			OnCommand="%function(self) self:diffusealpha((JUVMProfile().OATResultsAlpha or 2) / 10) end"
 		/>					
 		<Layer Type="Quad"
-			OnCommand="diffuse,#00000077;stretchto,SCREEN_CENTER_X-310,180,SCREEN_CENTER_X-146,240"
+			InitCommand="diffuse,#00000077;stretchto,SCREEN_CENTER_X-310,180,SCREEN_CENTER_X-146,240;diffusealpha,0.2"
+			OnCommand="%function(self) self:diffusealpha((JUVMProfile().OATResultsAlpha or 2) / 10 * 0.47) end"
 		/>
 	</children></ActorFrame>
 	<ActorFrame
@@ -38,17 +42,21 @@
 		/>
 
 		<Layer Type="Quad"
-			OnCommand="diffuse,#1E282F;stretchto,SCREEN_CENTER_X+5,409,SCREEN_CENTER_X+310,443"
+			InitCommand="diffuse,#1E282F;stretchto,SCREEN_CENTER_X+5,409,SCREEN_CENTER_X+310,443;diffusealpha,0.2"
+			OnCommand="%function(self) self:diffusealpha((JUVMProfile().OATResultsAlpha or 2) / 10) end"
 		/>	
 		<Layer Type="Quad"
-			OnCommand="diffuse,#1E282F59;stretchto,SCREEN_CENTER_X+5,320,SCREEN_CENTER_X+310,409"
+			InitCommand="diffuse,#1E282F59;stretchto,SCREEN_CENTER_X+5,320,SCREEN_CENTER_X+310,409;diffusealpha,0.2"
+			OnCommand="%function(self) self:diffusealpha((JUVMProfile().OATResultsAlpha or 2) / 10 * 0.35) end"
 		/>	
 	
 		<Layer Type="Quad"
-			OnCommand="diffuse,#1E282F;stretchto,SCREEN_CENTER_X+5,180,SCREEN_CENTER_X+310,355"
+			InitCommand="diffuse,#1E282F;stretchto,SCREEN_CENTER_X+5,180,SCREEN_CENTER_X+310,355;diffusealpha,0.2"
+			OnCommand="%function(self) self:diffusealpha((JUVMProfile().OATResultsAlpha or 2) / 10) end"
 		/>	
 		<Layer Type="Quad"
-			OnCommand="diffuse,#00000077;stretchto,SCREEN_CENTER_X+146,180,SCREEN_CENTER_X+310,240"
+			InitCommand="diffuse,#00000077;stretchto,SCREEN_CENTER_X+146,180,SCREEN_CENTER_X+310,240;diffusealpha,0.2"
+			OnCommand="%function(self) self:diffusealpha((JUVMProfile().OATResultsAlpha or 2) / 10 * 0.47) end"
 		/>	
 	</children></ActorFrame>
 	<Layer
@@ -57,4 +65,21 @@
 		OnCommand="ztest,1;diffusealpha,0;linear,0.6;diffusealpha,1"
 	/>
 	<Layer File="@VocalizePath()..'read.xml'" Command="sleep,3;queuecommand,Voice" />
+
+	<!-- rpc shenanigans -->
+	<Layer
+		Type="Quad"
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+		OnCommand="%function(self)
+			self:hidden(1)
+			oat_RPC:set('state', 'Results')
+
+			oat_RPC:set('title', GAMESTATE:GetCurrentSong():GetDisplayMainTitle())
+			oat_RPC:set('author', GAMESTATE:GetCurrentSong():GetDisplayArtist())
+			oat_RPC:set('pack', GAMESTATE:GetCurrentSong():GetGroupName())
+			oat_RPC:set('score', math.ceil(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetPercentDancePoints() * 10000) / 100)
+
+			oat_RPC:update()
+		end"
+	/>
 </children></ActorFrame>

@@ -4,10 +4,10 @@
 	    math.randomseed(math.random() * 1000000 + Second() * Hour() * DayOfYear())
 	    local fail = math.random(1, 72)
 	    local actor = children[1]
-	    if OatProfile().OATResultGif == 1 then
+	    if JUVMProfile().OATResultGif == 1 then
 	      actor:Load(Path('Graphics', '_grade models/f.gif'))
 	      actor:zoom(0.5)
-	    elseif OatProfile().OATResultGif == 3 then
+	    elseif JUVMProfile().OATResultGif == 3 then
 	      actor:Load(Path('Graphics', '_grade models/f.png'))
 	      actor:zoom(0.5)
 	    else

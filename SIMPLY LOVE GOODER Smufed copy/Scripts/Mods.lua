@@ -1412,6 +1412,24 @@ function SetOptionRow(row,c) -- If c is true this will not adjust cursor size. U
 	end end
 end
 
+function SongOptionsLabel(self)
+	local t = {}
+
+	local bpm = RateBPMlabel()
+	if bpm ~= '' then table.insert(t, bpm) end
+
+	local meta = MetaModsText()
+	if meta ~= '' then table.insert(t, meta) end
+
+	s = table.concat(t, ', ')
+
+	if self then
+		self:settext(s)
+	else
+		return s
+	end
+end
+
 function CancelAll(self)
 	local pn = self:getaux()
 	CalculateSpeedMod()

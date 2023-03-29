@@ -5,7 +5,7 @@
 		Text=""
 		File="_wendy white"
 		OnCommand="diffuse,#FFFFFF;zoom,.2;shadowlength,0;horizalign,left;x,SCREEN_LEFT+100-60;y,15;shadowlength,2"
-		InitCommand="%function(self) ScreenSelectMusicHeaderTextSet(self); if not OatProfile().OATShowHeaders then self:hidden(1) end end"
+		InitCommand="%function(self) ScreenSelectMusicHeaderTextSet(self); if not JUVMProfile().OATShowHeaders then self:hidden(1) end end"
 	/>
 	<Layer File="skeedobop.png" InitCommand="%function(self)
 	  self:xywh(150, 15, 300, 30)
@@ -24,7 +24,7 @@
 			self:shadowlength(0)
 			self:horizalign('right')
 			self:x(SCREEN_WIDTH)
-			if OatProfile().OATShowPlaytime and OatProfile().OATShowTotalPlaytime then
+			if JUVMProfile().OATShowPlaytime and JUVMProfile().OATShowTotalPlaytime then
 			  self:y(19)
 			else
 			  self:y(26)
@@ -49,9 +49,9 @@
 		end
 		
 		gnPlaySec = gnPlaySec + 1;
-		OatProfile().OATTotalPlayedFor = (OatProfile().OATTotalPlayedFor or 0) + 1
-		local t = OatProfile().OATTotalPlayedFor or 0
-		local s = OatProfile().OATTotalPlayedSongs or 0
+		JUVMProfile().OATTotalPlayedFor = (JUVMProfile().OATTotalPlayedFor or 0) + 1
+		local t = JUVMProfile().OATTotalPlayedFor or 0
+		local s = JUVMProfile().OATTotalPlayedSongs or 0
 		if gnPlaySec >= 60 then
 			gnPlaySec = gnPlaySec - 60;
 			gnPlayMin = gnPlayMin + 1;
@@ -83,7 +83,7 @@
 		
 		local lines = {}
 		
-		if OatProfile().OATShowPlaytime then
+		if JUVMProfile().OATShowPlaytime then
 		    if gnSongCount == 1 then
 		        table.insert(lines, 'playtime: ' .. gnPlayHourText..':'..gnPlayMinText..':'..gnPlaySecText .. ' ('..gnSongCount..' Song)')
 		    else
@@ -91,7 +91,7 @@
 		    end
 		end
 			
-		if OatProfile().OATShowTotalPlaytime then
+		if JUVMProfile().OATShowTotalPlaytime then
 		    table.insert(lines, 'total playtime: ' .. formatTime(t) .. ' (' .. s .. ' Songs)')
 		end
 		

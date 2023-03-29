@@ -296,14 +296,14 @@
 	<Layer
 		File="friends/groove.gif"
 		OnCommand="%function(self)
-		if OatProfile().OATDisplayFriendZ == 6 then self:hidden(1) else
+		if JUVMProfile().OATDisplayFriendZ == 6 then self:hidden(1) else
 			self:x(120)
 			self:y(SCREEN_HEIGHT-120)
 			
 			self:effectoffset(0.2)
 			
 			local friends
-			if OatProfile().OATDisplayFriendZ == 1 then friends = {
+			if JUVMProfile().OATDisplayFriendZ == 1 then friends = {
 				{'groove.gif', 0.2},
 				{'jevil.gif', 0.2},
 				{'based-and-blessed-alice.gif', 0, 0},
@@ -324,7 +324,7 @@
 				{'pixelfriends_peeesh.png'},
 				{'ddr-dance-1.gif', 0.2},
 				{'ddr-dance-2.gif', 0.2},
-			} elseif OatProfile().OATDisplayFriendZ == 2 then friends = {
+			} elseif JUVMProfile().OATDisplayFriendZ == 2 then friends = {
 				--{'pixelfriends_ama.png'},
 				--{'pixelfriends_ashe.png'},
 				--{'pixelfriends_chan.png'},
@@ -338,7 +338,7 @@
 				--{'pixelfriends_ccleaner.png'},
 				--{'pixelfriends_defender.png'},
 				{'pixelfriends_peeesh.png'},
-			} elseif OatProfile().OATDisplayFriendZ == 3 then friends = {
+			} elseif JUVMProfile().OATDisplayFriendZ == 3 then friends = {
 				{'pixelfriends_ama.png'},
 				{'pixelfriends_ashe.png'},
 				{'pixelfriends_chan.png'},
@@ -352,9 +352,9 @@
 				{'pixelfriends_ccleaner.png'},
 				{'pixelfriends_defender.png'},
 				{'pixelfriends_peeesh.png'},
- 			} elseif OatProfile().OATDisplayFriendZ == 4 then friends = { 
+ 			} elseif JUVMProfile().OATDisplayFriendZ == 4 then friends = { 
  				{'pixelfriends_shame.png'} 
- 			} elseif OatProfile().OATDisplayFriendZ == 5 then friends = {
+ 			} elseif JUVMProfile().OATDisplayFriendZ == 5 then friends = {
  				{'karen.png'},
  				{'dave.png'},
  				{'z.png'},
