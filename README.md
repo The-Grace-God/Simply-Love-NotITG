@@ -1,6 +1,10 @@
 # Simply-Love-NotITG
 A theme made specifically for NotITG 
 
+# What is this theme aiming to achieve
+- this theme was made and still is made for the intention of easy personalization and usability so anyone can use it without much knowledge with Stepmania or NotITG 
+- also this is a theme also made for the intention to be used in any situation no matter if your on a cab, a home computer, friends PC, or even a Steam Deck ao anyone is able to use this theme
+
 # Disclaimer:
 - Even though i count this as my theme not all of this is mine in fact most of the credit goes to jose_varela as he's the person who made the theme this is based off ofim only reviving the project as the original creator stoped working on it 5 years ago.
 
@@ -13,4 +17,3 @@ A theme made specifically for NotITG
 
 # What does this theme support
 - NotITG V4.3/4.2 as thats what this theme was mostly tested on.
-- Keep in mind there alot of errors in this build and the next one will be way more stable but im just too lazy to fix them right now.
