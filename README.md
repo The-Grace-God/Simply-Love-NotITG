@@ -1,4 +1,4 @@
-# Simply-Love-NotITG
+# Simply-Love-Enhanced (non final name)
 A theme made specifically for NotITG 
 
 # What is this theme aiming to achieve
