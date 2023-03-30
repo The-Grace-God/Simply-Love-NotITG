@@ -6,7 +6,7 @@ A theme made specifically for NotITG
 - also this is a theme also made for the intention to be used in any situation no matter if your on a cab, a home computer, friends PC, or even a Steam Deck so anyone is able to use this theme.
 
 # Disclaimer
-- Even though i count this as my theme not all of this is mine in fact most of the credit goes to jose_varela as he's the person who made the theme this is based off ofim only reviving the project as the original creator stoped working on it 5 years ago.
+- Even though i count this as my theme not all of this is mine in fact most of the credit goes to jose_varela as he's the person who made the theme this is based off of. I'm only reviving the project as the original creator stoped working on it 5 years ago.
 
 # Installation 
 - Put the "SIMPLY LOVE GOODER Smufed copy" in the themes directory,
