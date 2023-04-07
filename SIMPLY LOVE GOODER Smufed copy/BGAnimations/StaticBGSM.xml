@@ -332,6 +332,34 @@
     </children></ActorFrame>
 
 
+
+
+
+
+
+
+
+
+	<ActorFrame OnCommand="%function(self)
+        local JUVMProfile = PROFILEMAN:GetMachineProfile():GetSaved()
+            if JUVMProfile.JUVMDailyBG == 'Shader' then
+                self:hidden(0)
+            else
+                self:hidden(1)
+            end
+        end">
+        <children>
+
+
+
+            <Layer
+               
+        File="_shared background normal/Default oat.xml"
+        />
+
+
+    </children></ActorFrame>
+
 </children></ActorFrame>
     <!--<Layer
         Type="Quad"

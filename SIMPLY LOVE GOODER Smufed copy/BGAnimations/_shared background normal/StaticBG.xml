@@ -317,4 +317,16 @@
             />
 
         </children></ActorFrame>
+		<ActorFrame InitCommand="%function(self)
+        local JUVMProfile = PROFILEMAN:GetMachineProfile():GetSaved()
+            if JUVMProfile.JUVMDailyBG == 'Shader' then self:hidden(0) else self:hidden(1) end
+        end">
+        <children>
+
+        <Layer
+            
+            File="Default oat.xml"
+            />
+
+        </children></ActorFrame>
 </children></ActorFrame>

@@ -41,8 +41,8 @@ _FE_PROF().BackgroundShader		= _FE_PROF().BackgroundShader		or 1
 _FE_PROF().RichPresence			= _FE_PROF().RichPresence			~= not true
 _FE_PROF().ResultsAlpha			= _FE_PROF().ResultsAlpha			or 2 -- floating point
 _FE_PROF().ShowHeaders			= _FE_PROF().ShowHeaders			~= not true
-_FE_PROF().ShowPlaytime			= _FE_PROF().ShowPlaytime			~= not true
-_FE_PROF().ShowTotalPlaytime	= _FE_PROF().ShowTotalPlaytime		~= not true
+_FE_PROF().OATShowPlaytime			= _FE_PROF().OATShowPlaytime			~= not true
+_FE_PROF().OATShowTotalPlaytime	= _FE_PROF().OATShowTotalPlaytime		~= not true
 _FE_PROF().AggressiveRichPresence=_FE_PROF().AggressiveRichPresence	== not false -- [nil->false]
 _FE_PROF().BackgroundBrightness	= _FE_PROF().BackgroundBrightness	or 5 -- floating point
 
@@ -201,10 +201,6 @@ function OptionBackgroundShader()
 		for i,c in ipairs(list) do if c then
 			_FE_PROF().BackgroundShader = i>#shaders and #shaders-i or i
 			MESSAGEMAN:Broadcast('UpdateBackgroundShader')
-			SCREENMAN:GetTopScreen()(1)(2):diffusealpha(0.3)
-			if i>#shaders then ScreenThemeOptionsHeader:settext('THEME OPTIONS | This contains very intensive shaders!')
-			elseif shaders[i][2] then ScreenThemeOptionsHeader:settext('THEME OPTIONS | This is a very intensive shader!')
-			else   end
 		end end
 	end
 	return t
@@ -268,9 +264,9 @@ end
 function OptionShowPlaytime()
 	local t = OptionRowBase('ShowPlaytime',{'On','Off'})
 	t.OneChoiceForAllPlayers = true
-	t.LoadSelections = function(self, list) list[_FE_PROF().ShowPlaytime and 1 or 2] = true end
+	t.LoadSelections = function(self, list) list[_FE_PROF().OATShowPlaytime and 1 or 2] = true end
 	t.SaveSelections = function(self, list)
-		_FE_PROF().ShowPlaytime = list[1]
+		_FE_PROF().OATShowPlaytime = list[1]
 		 
 		 
 	end
@@ -280,9 +276,9 @@ end
 function OptionShowTotalPlaytime()
 	local t = OptionRowBase('ShowTotalPlaytime',{'On','Off'})
 	t.OneChoiceForAllPlayers = true
-	t.LoadSelections = function(self, list) list[_FE_PROF().ShowTotalPlaytime and 1 or 2] = true end
+	t.LoadSelections = function(self, list) list[_FE_PROF().OATShowTotalPlaytime and 1 or 2] = true end
 	t.SaveSelections = function(self, list)
-		_FE_PROF().ShowTotalPlaytime = list[1]
+		_FE_PROF().OATShowTotalPlaytime = list[1]
 		 
 		 
 	end

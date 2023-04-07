@@ -1430,6 +1430,26 @@ function SongOptionsLabel(self)
 	end
 end
 
+function MetaModsText(self)
+	mods = {}
+
+	for _, metaModsRow in ipairs(metaModsRows) do
+		for i, v in ipairs(metaModsRow.mods) do
+			if CheckMod(0, v) then
+				table.insert(mods, metaModsRow.modlist[i])
+			end
+		end
+	end
+
+	s = table.concat(mods, ', ')
+
+	if self then
+		self:settext(s)
+	else
+		return s
+	end
+end
+
 function CancelAll(self)
 	local pn = self:getaux()
 	CalculateSpeedMod()
