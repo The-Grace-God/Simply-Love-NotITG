@@ -16,9 +16,9 @@
 		<Layer 
 			Type="BitmapText"
 			Condition="not GAMESTATE:IsCourseMode()"
-			Font="_misoreg small"
+			Font="_digital-serial-extrabold 100px"
 			Text="STEPS"
-			OnCommand="x,SCREEN_LEFT+20;y,110;ShadowLength,0;diffuse,#000000;horizalign,right;zoom,0.5;queuecommand,Set"
+			OnCommand="x,SCREEN_LEFT+20;y,114;ShadowLength,0;diffuse,#000000;horizalign,right;zoom,0.15;queuecommand,Set"
 			CurrentSongChangedMessageCommand="playcommand,Set" 
 			CurrentStepsP1ChangedMessageCommand="playcommand,Set" 
 			SetCommand="%function(self)
@@ -30,9 +30,9 @@
 			end"
 		/>
 		<Layer 
-		   Font="_misobold small"
+		   Font="_digital-serial-extrabold 100px"
 			Text="???" 
-			OnCommand="y,110;x,SCREEN_LEFT+25;zoom,0.5;shadowlength,0;horizalign,left;maxwidth,390" 
+			OnCommand="y,114;x,SCREEN_LEFT+25;zoom,0.15;shadowlength,0;horizalign,left;maxwidth,690" 
 			SetCommand="%function(self) 
 			if GAMESTATE:GetCurrentSong() then
 				self:hidden(0)
@@ -100,9 +100,9 @@
 			CurrentStepsP2ChangedMessageCommand="playcommand,Set" 
 		/>
 		<Layer 
-			Font="_misobold small"
+			Font="_digital-serial-extrabold 100px"
 			Text="???" 
-			OnCommand="x,SCREEN_LEFT+175;y,130;ShadowLength,0;diffuse,#000000;horizalign,right;zoom,0.5;maxwidth,390" 
+			OnCommand="x,SCREEN_LEFT+175;y,134;ShadowLength,0;diffuse,#000000;horizalign,right;zoom,0.15;maxwidth,690" 
 			SetCommand="%function(self)
 			if GAMESTATE:GetCurrentSong() then
 				self:hidden(0)
@@ -156,9 +156,9 @@
 		<Layer 
 			Type="BitmapText"
 			Condition="not GAMESTATE:IsCourseMode()"
-			Font="_misoreg small"
+			Font="_digital-serial-extrabold 100px"
 			Text="STEPS"
-			OnCommand="x,SCREEN_LEFT+180;y,130;ShadowLength,0;diffuse,#000000;horizalign,left;zoom,0.5;queuecommand,Set"
+			OnCommand="x,SCREEN_LEFT+180;y,134;ShadowLength,0;diffuse,#000000;horizalign,left;zoom,0.15;queuecommand,Set"
 			CurrentSongChangedMessageCommand="playcommand,Set" 
 			CurrentStepsP1ChangedMessageCommand="playcommand,Set" 
 			SetCommand="%function(self)
@@ -199,8 +199,8 @@
 		<Layer
 			Type="BitmapText"
 			Text="INSUFFICIENT TIME"
-			File="_misobold small"
-			InitCommand="zoom,.5;shadowlength,0;addx,2;addy,-2"
+			File="_digital-serial-extrabold 100px"
+			InitCommand="zoom,.15;shadowlength,0;addx,2;addy,-2"
 			OnCommand="%function(self) self:diffuse(TextOnColor(-1)) end"
 			OffCommand="linear,0.2;diffusealpha,0"
 		/>
@@ -258,19 +258,19 @@
 		Type="BitmapText"
 		Text=""
 		Condition="not GAMESTATE:IsCourseMode()"
-		File="_misobold small"
-		InitCommand="diffuse,#FFFFFF;zoom,.4;shadowlength,0;x,SCREEN_LEFT+100-45;y,25;shadowlength,2"
+		File="_digital-serial-extrabold 100px"
+		InitCommand="diffuse,#FFFFFF;zoom,.12;shadowlength,0;x,SCREEN_LEFT+100-45;y,29;shadowlength,2"
 		OnCommand="linear,.5;diffusealpha,1;"
 		PressStartCommand="linear,.5;diffusealpha,0"
 		CurrentSongChangedMessageCommand="playcommand,Update"
 			UpdateCommand="%function(self)
 			if GAMESTATE:GetCurrentSong() then
 				self:finishtweening()
-				self:zoom(0.6)
+				self:zoom(0.18)
 				self:settext(GAMESTATE:GetCurrentSong():GetGroupName())
-				self:y(28)
+				self:y(32)
 				self:x(SCREEN_LEFT+155)
-				self:maxwidth(300)
+				self:maxwidth(600)
 				local names = {
 
    					{'VGMP', 		{'Video Game Mega Pack'} },
@@ -295,7 +295,7 @@
 	
 	<Layer
 		File="friends/groove.gif"
-		InitCommand="draworder,1"
+		InitCommand="draworder,100"
 		OnCommand="%function(self)
 		if _FE_PROF().DisplayFriendZ == 6 then self:hidden(1) else
 			self:x(120)
@@ -403,10 +403,11 @@
 		end end"
 	/>
 
-	<Quad Command="stretchto,SCREEN_RIGHT,SCREEN_BOTTOM,SCREEN_LEFT,SCREEN_TOP;diffuse,0,0,0,0;" OptionsShowMessageCommand="linear,0.4;diffusealpha,1" />
-	<Layer Condition="not GAMESTATE:IsCourseMode()" File="DifficultyList.xml" Command="x,SCREEN_LEFT+90-40;y,SCREEN_CENTER_Y+33" OffCommand="linear,.3;diffusealpha,0" SongInfoMessageCommand="queuecommand,Update" />
-	<Quad Command="draworder,100;x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-20;zoomtowidth,SCREEN_WIDTH;zoomy,10;diffusealpha,0" OptionsShowMessageCommand="diffusealpha,1;linear,1.5;zoomx,0;" />
+	<Quad InitCommand="draworder,1" Command="stretchto,SCREEN_RIGHT,SCREEN_BOTTOM,SCREEN_LEFT,SCREEN_TOP;diffuse,0,0,0,0;" OptionsShowMessageCommand="linear,0.4;diffusealpha,1" />
+	<Layer InitCommand="draworder,1" Condition="not GAMESTATE:IsCourseMode()" File="DifficultyList.xml" Command="x,SCREEN_LEFT+90-40;y,SCREEN_CENTER_Y+33" OffCommand="linear,.3;diffusealpha,0" SongInfoMessageCommand="queuecommand,Update" />
+	<Quad InitCommand="draworder,1" Command="draworder,100;x,SCREEN_CENTER_X;y,SCREEN_BOTTOM-20;zoomtowidth,SCREEN_WIDTH;zoomy,10;diffusealpha,0" OptionsShowMessageCommand="diffusealpha,1;linear,1.5;zoomx,0;" />
 	<Layer
+	InitCommand="draworder,1"
                 File="../ScreenWithMenuElements overlay" />
 </children> </ActorFrame>
 

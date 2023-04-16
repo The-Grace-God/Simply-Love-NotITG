@@ -359,9 +359,7 @@
 
 
     </children></ActorFrame>
-
-</children></ActorFrame>
-    <!--<Layer
+    <Layer
         Type="Quad"
         OnCommand="%function(self)
         if GAMESTATE:GetCurrentSong() then
@@ -370,10 +368,11 @@
         self:y(SCREEN_CENTER_Y)
         self:x(SCREEN_CENTER_X)
         end"
-        />-->
+        />
 
-        <Zctor
+    <Actor
         File="SongBackground"
+		InitCommand="draworder,100"
         OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;ZoomToWidth,SCREEN_WIDTH;ZoomToHeight,SCREEN_HEIGHT;diffusealpha,0.6"
         CurrentSongChangedMessageCommand="finishtweening;decelerate,0.5;diffusealpha,0;sleep,0.02;queuecommand,ChangeBackground"
         ChangeBackgroundCommand="%function(self)

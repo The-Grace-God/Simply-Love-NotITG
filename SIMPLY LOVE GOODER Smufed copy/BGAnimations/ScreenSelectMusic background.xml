@@ -15,15 +15,32 @@
             File="StaticBGSM.xml"
             />
 
-        <Zctor
+            <Actor
         File="SongBackground"
-        Condition="PROFILEMAN:GetMachineProfile():GetSaved().JUVMShowSongBackgroundSM"
+		InitCommand="draworder,100"
         OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;ZoomToWidth,SCREEN_WIDTH;ZoomToHeight,SCREEN_HEIGHT;diffusealpha,0.6"
         CurrentSongChangedMessageCommand="finishtweening;decelerate,0.5;diffusealpha,0;sleep,0.02;queuecommand,ChangeBackground"
         ChangeBackgroundCommand="%function(self)
+        self:finishtweening()
+        self:hidden(1)
         local JUVMProfile = PROFILEMAN:GetMachineProfile():GetSaved()
             if JUVMProfile.JUVMShowSongBackgroundSM then
-                SongBGLoad(self)
+                if GAMESTATE:GetCurrentSong() then
+                    if GAMESTATE:GetCurrentSong():GetBackgroundPath() then
+                        self:scaletocover(0,SCREEN_TOP,SCREEN_WIDTH,SCREEN_BOTTOM);
+                        self:hidden(0)
+                        self:LoadBackground(GAMESTATE:GetCurrentSong():GetBackgroundPath());
+                        self:sleep(0.25)
+                        self:zoom(1.2)
+                        self:decelerate(0.5)
+                        self:scaletocover(0,SCREEN_TOP,SCREEN_WIDTH,SCREEN_BOTTOM);
+                        self:diffusealpha(0.8)
+                    else
+                        self:hidden(1)
+                    end
+                else
+                    self:hidden(1)
+                end
             else
                 self:hidden(1)
             end

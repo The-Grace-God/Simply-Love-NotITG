@@ -6,7 +6,7 @@
 	self:y((listPointerY[1]-1)*19.3)
 	self:diffuse(BubbleColorRGB(PLAYER_1))
 	end"  
-	Command="x,-24;zoom,.8;bounce;effectmagnitude,-8,0,0;effectperiod,1.0;effectoffset,0.2;effectclock,bgm;shadowlength,4" />
+	Command="x,-24;zoom,.2;bounce;effectmagnitude,-8,0,0;effectperiod,1.0;effectoffset,0.2;effectclock,bgm;shadowlength,4" />
 	<Layer Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" Type="Quad"
 	UpdateCommand="%function(self)
 	self:finishtweening()
@@ -29,7 +29,7 @@
 	self:y((listPointerY[2]-1)*19.3)
 	self:diffuse(BubbleColorRGB(PLAYER_2))
 	end"  
-	Command="x,240;zoom,.8;bounce;effectmagnitude,8,0,0;effectperiod,1.0;effectoffset,0.2;effectclock,bgm;shadowlength,4" />
+	Command="x,240;zoom,.2;bounce;effectmagnitude,8,0,0;effectperiod,1.0;effectoffset,0.2;effectclock,bgm;shadowlength,4" />
 	<Layer Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" Type="Quad"
 	UpdateCommand="%function(self)
 	self:finishtweening()
