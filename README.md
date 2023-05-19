@@ -12,5 +12,9 @@ A theme made specifically for NotITG
 - And select "SIMPLY LOVE GOODER Smufed copy" in the menu (might have to scroll a bit if you have more than one theme).
 
 # What does this theme support
-- NotITG V4.3/4.2 as thats what this theme was mostly tested on.
+- NotITG V4.3 as thats what this theme was mostly tested on.
 - Keep in mind there alot of errors in this build and the next one will be way more stable but im just too lazy to fix them right now.
+
+#Notitg 4.3.0 link
+https://objects-us-east-1.dream.io/smbuilds/OPENITG/NotITG-v4.3.0-UpgradePack-EarlyAccess.zip
+this link is off of Jose_Verela's "Stepmania Build Archive"
