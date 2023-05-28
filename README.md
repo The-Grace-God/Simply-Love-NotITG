@@ -15,6 +15,6 @@ A theme made specifically for NotITG
 - NotITG V4.3 as thats what this theme was mostly tested on.
 - Keep in mind there alot of errors in this build and the next one will be way more stable but im just too lazy to fix them right now.
 
-#Notitg 4.3.0 link
+# Notitg 4.3.0 link
 https://objects-us-east-1.dream.io/smbuilds/OPENITG/NotITG-v4.3.0-UpgradePack-EarlyAccess.zip
-this link is off of Jose_Verela's "Stepmania Build Archive"
+- this link is off of Jose_Verela's "Stepmania Build Archive"
