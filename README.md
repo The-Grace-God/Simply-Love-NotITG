@@ -1,6 +1,6 @@
 # This theme is getting depricated
 a new theme will be made soon-ish link will be posted here once the repository is up
--Main reason for wanting to move away from this as it uses a lot of reused code and i want to make a project i can more call my own
+- Main reason for wanting to move away from this as it uses a lot of reused code and i want to make a project i can more call my own
 
 # Simply-Love-NotITG
 A theme made specifically for NotITG 
