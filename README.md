@@ -1,5 +1,5 @@
 # This theme is getting depricated
-a new theme will be made soon-ish link will be poted here once the repository is up
+a new theme will be made soon-ish link will be posted here once the repository is up
 
 # Simply-Love-NotITG
 A theme made specifically for NotITG 
